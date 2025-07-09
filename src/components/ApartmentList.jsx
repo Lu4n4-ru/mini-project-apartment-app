@@ -1,0 +1,50 @@
+import list from '../data/listing.json'
+import { useState } from 'react'
+
+function ApartmentList () {
+
+    const [apartmentToDisplay, setApartmentToDisplay] = useState(list.results)
+    const isAvailable = (has_availability) => {
+        return has_availability === true ? "is available" : "is not available" 
+
+    }
+
+    const deleteApartment = (apartmentId) => {
+        const newApartmentList = apartmentToDisplay.filter((apartment) => apartment.id !== apartmentId)
+
+        setApartmentToDisplay(newApartmentList)
+    }
+
+
+
+console.log(apartmentToDisplay)
+
+    return (
+        <div>
+            <h1>Apartments list</h1>
+            {apartmentToDisplay.map((apartmentsObj) => {
+                return (
+                    <div key={apartmentsObj.id} className='cards'>
+                        <p>Apartment Available: {isAvailable(apartmentsObj.has_availability)} </p>
+                        <h2>{apartmentsObj.name}</h2>
+                        <img src={apartmentsObj.picture_url} alt='' />
+                        <h4>Description: {apartmentsObj.description}</h4>
+                        <p>Room Type: {apartmentsObj.room_type}</p>
+                        <p>Bedrooms: {apartmentsObj.bedrooms}</p>
+                        <p>Beds: {apartmentsObj.beds}</p>
+
+                        <p>
+                            <button onClick={() => {deleteApartment(apartmentsObj.id)}} style={{border:'1px solid black'}}>Delete Apartment</button>
+                        </p>
+
+                        
+                    </div>
+                )
+                
+            })}
+        </div>
+
+    )
+}
+
+export default ApartmentList
