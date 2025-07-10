@@ -3,21 +3,27 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
-import ApartmentList from "./components/ApartmentList"
-import { BrowserRouter } from "react-router-dom";
-
+import DashboardPage from "./pages/DashboardPage";
+import ItemDetailsPage from "./pages/ItemDetailsPage";
+import AboutPage from "./pages/AboutPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import ApartmentList from "./components/ApartmentList";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Sidebar />
-        <Footer />
-        <ApartmentList />
+      <Navbar />
+      <Sidebar />
 
-      
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="/item-details" element={<ItemDetailsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+
+      <Footer />
     </>
   );
 }
