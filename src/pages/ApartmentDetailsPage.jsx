@@ -1,17 +1,17 @@
 import { useParams, Link, NavLink } from "react-router-dom"
 
 
-function ItemDetailsPage (props) {
+function ApartmentDetailsPage (props) {
 
     const {apartmentId} = useParams();
 
-    const apartments = props.newApartmentList.find((apartmentsObj) => {
+    const apartment = props.newApartmentList.find((apartmentsObj) => {
         return apartmentsObj.id === parseInt(apartmentId)
     })
 
     return (
         <div>
-             <h2>{apartments.name}</h2>
+             <h2>Details for apt. with Id... {apartment.id}</h2>
 
 
         <p>
@@ -24,4 +24,4 @@ function ItemDetailsPage (props) {
     )
 }
 
-export default ItemDetailsPage
+export default ApartmentDetailsPage

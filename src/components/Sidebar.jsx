@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 function Sidebar() {
   return (
-    <div class="sidebar" style={{border: "1px solid hotPink"}}>
+    <div className="sidebar" style={{border: "1px solid hotPink"}}>
       <div className="sidebar-header">
         <h2>Admin Dashboard</h2>
         

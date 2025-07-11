@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import DashboardPage from "./pages/DashboardPage";
-import ItemDetailsPage from "./pages/ItemDetailsPage";
+import ApartmentDetailsPage from "./pages/ApartmentDetailsPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ApartmentList from "./components/ApartmentList";
@@ -19,7 +19,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<DashboardPage />} />
-          <Route path="/item-details" element={<ItemDetailsPage />} />
+          <Route path="/apartments/:apartmentId" element={<ApartmentDetailsPage />} />
+
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

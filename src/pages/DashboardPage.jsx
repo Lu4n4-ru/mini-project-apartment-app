@@ -4,7 +4,7 @@ function DashboardPage () {
 
     return (
         <>
-        <ApartmentList/>
+        <ApartmentList />
         </>
         
     )
