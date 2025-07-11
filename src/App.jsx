@@ -12,20 +12,22 @@ import { Routes, Route, Link, NavLink } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Navbar />
+    
+    <div className="app-container">
       <Sidebar />
-
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/item-details" element={<ItemDetailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-
-      <Footer />
-    </>
+      <div className="main-content">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/item-details" element={<ItemDetailsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </div>
   );
 }
+
 
 export default App;

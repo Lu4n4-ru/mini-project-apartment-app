@@ -12,7 +12,7 @@
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" style={{border:"1px solid hotPink"}}>
       <p>
         <a href="https://github.com/laurelin88/mini-project-apartment-app" target="_blank" rel="noopener noreferrer">Github
         </a>

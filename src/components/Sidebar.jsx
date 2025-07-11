@@ -2,12 +2,15 @@ import { Link, NavLink } from 'react-router-dom'
 
 function Sidebar() {
   return (
-    <div>
-      <nav>
-        <NavLink to="/about">About us</NavLink>
-      </nav>
+    <div class="sidebar" style={{border: "1px solid hotPink"}}>
+      <div className="sidebar-header">
+        <h2>Admin Dashboard</h2>
+        
+      </div>
 
-      <nav>
+      <nav className="sidebar-nav">
+        <NavLink to="/about">About us</NavLink>
+        <br></br>
         <NavLink to="/">Home</NavLink>
       </nav>
     </div>

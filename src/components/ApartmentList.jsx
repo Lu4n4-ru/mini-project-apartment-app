@@ -13,6 +13,7 @@ function ApartmentList () {
         const newApartmentList = apartmentToDisplay.filter((apartment) => apartment.id !== apartmentId)
 
         setApartmentToDisplay(newApartmentList)
+        console.log(typeof newApartmentList)
     }
 
 
@@ -20,8 +21,8 @@ function ApartmentList () {
 console.log(apartmentToDisplay)
 
     return (
-        <div>
-            <h1>Apartments list</h1>
+        <div class="cards">
+            <h3>Apartments list</h3>
             {apartmentToDisplay.map((apartmentsObj) => {
                 return (
                     <div key={apartmentsObj.id} className='cards'>
@@ -35,6 +36,9 @@ console.log(apartmentToDisplay)
 
                         <p>
                             <button onClick={() => {deleteApartment(apartmentsObj.id)}} style={{border:'1px solid black'}}>Delete Apartment</button>
+                        </p>
+                        <p>
+                            <button>Show Aprtment Details</button>
                         </p>
 
                         
