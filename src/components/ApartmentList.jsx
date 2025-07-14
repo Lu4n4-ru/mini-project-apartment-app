@@ -1,45 +1,27 @@
 import { Link } from "react-router-dom";
-import list from "../data/listing.json";
-import { useState } from "react";
 
-function ApartmentList() {
-  const [apartmentToDisplay, setApartmentToDisplay] = useState(list.results);
-  
+function ApartmentList(props) {
   const isAvailable = (has_availability) => {
     return has_availability === true ? "is available" : "is not available";
   };
 
-  const deleteApartment = (apartmentId) => {
-    const newApartmentList = apartmentToDisplay.filter(
-      (apartment) => apartment.id !== apartmentId
-    );
-
-    setApartmentToDisplay(newApartmentList);
-    console.log(typeof newApartmentList);
-  };
-
-  console.log(apartmentToDisplay);
-
   return (
     <div className="cards">
-      <h3>Apartments list</h3>
-      {apartmentToDisplay.map((apartmentsObj) => {
+      <h3 id="apt-list-title">Apartments list</h3>
+      {props.apartments.map((apartmentsObj) => {
         return (
           <div key={apartmentsObj.id} className="cards">
             <p>
-              Apartment Available: {isAvailable(apartmentsObj.has_availability)}{" "}
+              <b>Apartment Available:</b> {isAvailable(apartmentsObj.has_availability)}{" "}
             </p>
             <h2>{apartmentsObj.name}</h2>
-            <img src={apartmentsObj.picture_url} alt="" />
+            <img src={apartmentsObj.picture_url} alt={apartmentsObj.name} />
             <h4>Description: {apartmentsObj.description}</h4>
-            {/* <p>Room Type: {apartmentsObj.room_type}</p>
-                        <p>Bedrooms: {apartmentsObj.bedrooms}</p>
-                        <p>Beds: {apartmentsObj.beds}</p> */}
-
+            
             <p>
               <button
                 onClick={() => {
-                  deleteApartment(apartmentsObj.id);
+                  props.onDelete(apartmentsObj.id);
                 }}
                 style={{ border: "1px solid black" }}
               >

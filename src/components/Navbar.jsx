@@ -1,7 +1,7 @@
 function Navbar() {
     return (
         <>
-        <header style={{fontSize: "40px"}}><b>APP'Art</b></header>
+        <header id="title" style={{fontSize: "80px"}}><b>APP'Art</b></header>
         
         </>
     )

@@ -1,27 +1,45 @@
-import { useParams, Link, NavLink } from "react-router-dom"
+import { useParams, Link } from "react-router-dom";
 
+function ApartmentDetailsPage(props) {
+  const { apartmentId } = useParams();
+  
+  const apartment = props.apartments.find((apartmentsObj) => {
+    return apartmentsObj.id === parseInt(apartmentId);
+  });
 
-function ApartmentDetailsPage (props) {
-
-    const {apartmentId} = useParams();
-
-    const apartment = props.newApartmentList.find((apartmentsObj) => {
-        return apartmentsObj.id === parseInt(apartmentId)
-    })
-
+  // Handle case where apartment is not found
+  if (!apartment) {
     return (
-        <div>
-             <h2>Details for apt. with Id... {apartment.id}</h2>
+      <div>
+        <h2>Apartment not found</h2>
+        <Link to="/">Back to Dashboard</Link>
+      </div>
+    );
+  }
 
-
-        <p>
-            <Link to="/item-details" className="detail-button">
-            </Link>
-        </p>
-
-        </div>
-       
-    )
+  return (
+    <div className="apt-details">
+      <h2>Details for apt. Id: {apartment.id}</h2>
+      <h3>{apartment.name}</h3>
+      <img src={apartment.picture_url} alt={apartment.name} />
+      <p id="description">Description: {apartment.description}</p>
+      <p><b>Available:</b> {apartment.has_availability ? "Yes" : "No"}</p>
+      
+      <button 
+        onClick={() => {
+          props.onDelete(apartment.id);
+          // You might want to navigate back to dashboard after deletion
+        }}
+        style={{ border: "1px solid red", marginRight: "10px" }}
+      >
+        Delete Apartment
+      </button>
+      
+      <Link to="/">
+        <button>Back to Dashboard</button>
+      </Link>
+    </div>
+  );
 }
 
-export default ApartmentDetailsPage
+export default ApartmentDetailsPage;
