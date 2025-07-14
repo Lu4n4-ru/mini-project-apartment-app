@@ -12,7 +12,9 @@ function Sidebar() {
         <NavLink to="/about">About us</NavLink>
         <br></br>
         <NavLink to="/">Home</NavLink>
-      </nav>
+        <br></br>
+        <NavLink to="/create-new">Create a new Apartment</NavLink>
+    </nav>
     </div>
   );
 }
