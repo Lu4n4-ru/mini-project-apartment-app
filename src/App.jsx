@@ -10,7 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { Routes, Route } from "react-router-dom";
 import list from "./data/listing.json";
 import UpdateApartment from "./components/UpdateApartment";
-import AddApartment from "./components/UpdateApartment";
+import AddApartment from "./components/AddApartment";
 
 function App() {
   const [apartmentToDisplay, setApartmentToDisplay] = useState(list.results);
@@ -34,9 +34,9 @@ function App() {
       id: nextId,
     };
 
-    const newApartmentArr = [newApartmentList, ...apartmentToDisplay];
+    const newApartmentArr = [newList, ...apartmentToDisplay];
 
-    setApartmentToDisplay(newList);
+    setApartmentToDisplay(newApartmentArr);
   };
 
   /*const createMovie = (newMovieDetails) => {
@@ -65,9 +65,7 @@ function App() {
     /////////////////////////////////
 
     <div className="app-container">
-      <Sidebar>
-        
-      </Sidebar>
+      <Sidebar></Sidebar>
       <div className="main-content">
         <Navbar />
         <Routes>
@@ -91,11 +89,12 @@ function App() {
           />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/create-new" element={<AddApartment />} />
-          <Route
+          <Route path="/create-new" element={<AddApartment  onCreate={createApartment}/>} />
+          {/*<Route
             path="/create"
-            element={<AddApartment onCreate={createApartment} />}
-          />
+            element={<AddApartment />}
+          />*/}
+
         </Routes>
 
         <Footer />

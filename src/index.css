@@ -160,6 +160,7 @@ img {
   background-color: rgb(238, 238, 238);
   border: 1px solid gray;
   font-weight: bold;
+  margin: 5px;
 }
 
 .apt-details {
