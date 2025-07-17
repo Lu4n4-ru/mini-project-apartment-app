@@ -1,12 +1,20 @@
-# React + Vite
+# App'Art Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is part of our training in Web Dev full-stack development, and implement a mocking dashboard to handle apartments for holidays renting.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Components and primary functionalities
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is around some of the learning objectives of the Module 2 of our training:
+- React.js fundamentals (components, props, state)
+- Vite
+- npm
+- Routing and Link
+- URLs parameters (useParams())
+
+We implemeted the CRUD functionalities:
+- Create
+- Read
+- Update
+- Delete
