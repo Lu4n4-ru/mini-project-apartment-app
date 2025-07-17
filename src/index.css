@@ -15,6 +15,7 @@
 }
 
 body {
+  color: rgb(209, 54, 157);
   margin: 0;
   height: 100vh;
   overflow: hidden; /* Prevent scrolling on body */
@@ -138,6 +139,7 @@ button:focus-visible {
   width: 48%;
   margin: 4px;
   align-items: center;
+  color: hotpink
 }
 
 img {
@@ -187,6 +189,7 @@ footer {
   width: auto;
   margin-top: 20px;
   margin-left: 50px;
+  text-align: center;
 }
 
 #title {

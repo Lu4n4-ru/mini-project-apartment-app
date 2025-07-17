@@ -19,10 +19,16 @@ function ApartmentDetailsPage(props) {
 
   return (
     <div className="apt-details">
-      <h2>Details for apt. Id: {apartment.id}</h2>
+      <h2><u>Details for apt. Id: {apartment.id}</u></h2>
       <h3>{apartment.name}</h3>
+      <h2><b>Price: </b>{apartment.price}</h2>
+      <h3><b>Host Name: </b> {apartment.host_name}</h3>
+      <p><b>Location: </b> {apartment.host_location}</p>
+      <p><b>Number of Beds: </b>{apartment.beds}</p>
+      <p><b>Room type: </b> {apartment.room_type}</p>
+      <p><b>Minimum Nights stay: </b> {apartment.minimum_nights}</p>
       <img src={apartment.picture_url} alt={apartment.name} />
-      <p id="description">Description: {apartment.description}</p>
+      <p id="description"><b>Description: </b> {apartment.description}</p>
       <p><b>Available:</b> {apartment.has_availability ? "Yes" : "No"}</p>
       
       <button

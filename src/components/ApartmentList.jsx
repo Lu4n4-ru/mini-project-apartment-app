@@ -10,12 +10,13 @@ function ApartmentList(props) {
       {props.apartments.map((apartmentsObj) => {
         return (
           <div key={apartmentsObj.id} className="card">
-            <p>
-              <b>Apartment Available:</b> {isAvailable(apartmentsObj.has_availability)}{" "}
-            </p>
+            
             <h2>{apartmentsObj.name}</h2>
             <img src={apartmentsObj.picture_url} alt={apartmentsObj.name} />
             <h4>Description: {apartmentsObj.description}</h4>
+            <p>
+              <b>Apartment Available:</b> {isAvailable(apartmentsObj.has_availability)}{" "}
+            </p>
 
 
               <Link to={`/apartments/${apartmentsObj.id}`}>
