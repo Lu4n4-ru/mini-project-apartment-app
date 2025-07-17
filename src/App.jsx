@@ -39,6 +39,18 @@ function App() {
     setApartmentToDisplay(newApartmentArr);
   };
 
+  const updateApartment = (apartmentId, updatedDetails) => {
+    // Trova l'appartamento da aggiornare e sostituiscilo con i nuovi dettagli
+    const updatedApartments = apartmentToDisplay.map((apartment) => {
+      if (apartment.id === parseInt(apartmentId)) {
+        return { ...apartment, ...updatedDetails };
+      }
+      return apartment;
+    });
+
+    setApartmentToDisplay(updatedApartments);
+  };
+
   /*const createMovie = (newMovieDetails) => {
 
     // calculate the id of the next movie that we will create
@@ -89,12 +101,19 @@ function App() {
           />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/create-new" element={<AddApartment  onCreate={createApartment}/>} />
-          {/*<Route
-            path="/create"
-            element={<AddApartment />}
-          />*/}
-
+          <Route
+            path="/create-new"
+            element={<AddApartment onCreate={createApartment} />}
+          />
+          <Route
+            path="/apartments/edit/:apartmentId"
+            element={
+              <UpdateApartment
+                apartments={apartmentToDisplay}
+                onUpdate={updateApartment}
+              />
+            }
+          />
         </Routes>
 
         <Footer />

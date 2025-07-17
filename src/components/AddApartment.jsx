@@ -16,6 +16,7 @@ function AddApartment(props) {
   const handleRoomTypeInput = (e) => setRoomType(e.target.value);
   const handleBedsInput = (e) => setBeds(e.target.value);
   const navigate = useNavigate();
+  
   function submitNewApt(e) {
     e.preventDefault();
 

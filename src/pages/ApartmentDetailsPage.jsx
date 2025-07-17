@@ -25,19 +25,40 @@ function ApartmentDetailsPage(props) {
       <p id="description">Description: {apartment.description}</p>
       <p><b>Available:</b> {apartment.has_availability ? "Yes" : "No"}</p>
       
-      <button 
+      <button
+        style={{
+          background: "white",
+          border: "1px solid red",
+          color: "hotpink",
+          marginRight: "10px"
+        }}
         onClick={() => {
           props.onDelete(apartment.id);
           // You might want to navigate back to dashboard after deletion
         }}
-        style={{ border: "1px solid red", marginRight: "10px" }}
       >
         Delete Apartment
       </button>
       
       <Link to="/">
-        <button>Back to Dashboard</button>
+        <button 
+        style={{
+          background: "white",
+          border: "1px solid red",
+          color: "hotpink",
+          marginRight: "10px"
+        }}>Back to Dashboard</button>
       </Link>
+
+      <Link to={`/apartments/edit/${apartment.id}`}>
+      <button 
+      style={{
+          background: "white",
+          border: "1px solid red",
+          color: "hotpink",
+          marginRight: "10px"
+        }}>Modify apartment details</button> 
+        </Link>
     </div>
   );
 }
