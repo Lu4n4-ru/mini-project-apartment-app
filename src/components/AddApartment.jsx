@@ -37,6 +37,9 @@ function AddApartment(props) {
   return (
     <div>
       <span>Add a new Apartment</span>
+      <br>
+      </br>
+      
       <form onSubmit={submitNewApt}>
         <div>
           <label>
@@ -49,6 +52,7 @@ function AddApartment(props) {
               onChange={handleNameInput}
             />
           </label>
+          <span>                                   </span>
 
           <label>
             Description
@@ -60,6 +64,7 @@ function AddApartment(props) {
               onChange={handleDescriptionInput}
             />
           </label>
+           <span>                                   </span>
 
           <label>
             Phone
@@ -84,6 +89,7 @@ function AddApartment(props) {
               onChange={handleRoomTypeInput}
             />
           </label>
+           <span>                                   </span>
 
           <label>
             Location
@@ -95,6 +101,7 @@ function AddApartment(props) {
               onChange={handleHostLocationInput}
             />
           </label>
+           <span>                                   </span>
 
           <label>
             Number of Beds
